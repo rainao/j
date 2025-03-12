@@ -35,3 +35,4 @@ export default defineConfig({
                 access: "public",
                 optional: true,
                 default:
+            }
