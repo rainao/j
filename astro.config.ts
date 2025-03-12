@@ -34,5 +34,6 @@ export default defineConfig({
                 context: "client",
                 access: "public",
                 optional: true,
-                default:
-            }
+                default: parsedDoc.marketplace.enabled,  // fixed this line
+}),
+            
