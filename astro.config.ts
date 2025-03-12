@@ -34,6 +34,6 @@ export default defineConfig({
                 context: "client",
                 access: "public",
                 optional: true,
-                default: parsedDoc.marketplace.enabled,  // fixed this line
+                default: parsedDoc.marketplace.enabled,  // ITS FLIPPING ENDED CORRECTLY AHUGHIAGIHAG
 }),
             
