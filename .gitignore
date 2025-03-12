@@ -36,8 +36,6 @@ pnpm-debug.log*
 database.sqlite
 
 
-# YOUR config
-config.toml
 
 # Goofy PNPM problem
 ~/
