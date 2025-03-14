@@ -20,6 +20,11 @@ if (!parsedDoc || !parsedDoc.seo || typeof parsedDoc.seo.enabled === "undefined"
     throw new Error("parsedDoc or parsedDoc.seo is undefined or malformed.");
 }
 
+// Check if parsedDoc.marketplace is defined and contains enabled
+if (!parsedDoc.marketplace || typeof parsedDoc.marketplace.enabled === "undefined") {
+    throw new Error("parsedDoc or parsedDoc.marketplace is undefined or malformed.");
+}
+
 export default defineConfig({
     site: parsedDoc.seo.enabled ? parsedDoc.seo.domain || process.env.SITE : 'http://localhost:4321',
     env: {
@@ -34,6 +39,8 @@ export default defineConfig({
                 context: "client",
                 access: "public",
                 optional: true,
-                default: parsedDoc.marketplace.enabled,  // ITS FLIPPING ENDED CORRECTLY AHUGHIAGIHAG
-}),
-            
+                default: parsedDoc.marketplace?.enabled ?? false, // Safeguard for undefined
+            }),
+        }
+    },
+});
